@@ -21,7 +21,7 @@ int main(void)
 
     printf("p: %p\n", p);           //pにはaのアドレスが入っているので、aのアドレス
     printf("*p: %d\n", *p);         //pが指し示す先の変数の値を表示するのでaの値
-    printf("&p: %p\n", &p);       //pのアドレス
+    printf("&p: %p\n", &p);         //pのアドレス
 
     return 0;
 }

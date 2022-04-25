@@ -11,7 +11,8 @@ int main()
     while (*p1 != '\0') {
         p1++;
     }
-    while () {
+    while (p2 <= p1) {
+        p1--;
         putchar(*p1);
     }
     putchar('\n');

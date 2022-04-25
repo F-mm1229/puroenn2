@@ -12,24 +12,24 @@ int main()
     printf("c: %c\n", c);                   //cの中身を表示
     printf("&c: %p\n\n", &c);               //cのアドレスを表示
     printf("p: %p\n", p);                   //ポインタpの中身は変数cのアドレスなのでcのアドレスを表示
-    printf("*p: %c\n\n", *p);               //ポインタpが指し示す変数cの中身を参照するのでcの値を表示
+    printf("*p: %c\n\n", *p);               //ポインタpが指し示す変数cの中身を参照するのでcの中身を表示
 
-    *p = 'B';                               //ポインタpに中身を代入
-    printf("c: %c\n", c);                   //
-    printf("&c: %p\n\n", &c);
-    printf("p: %p\n", p);
-    printf("*p: %c\n\n", *p);
+    *p = 'B';                               //ポインタpが指し示す変数cの中身を参照するのでcに代入される
+    printf("c: %c\n", c);                   //cの中身を表示
+    printf("&c: %p\n\n", &c);               //cのアドレスを表示
+    printf("p: %p\n", p);                   //ポインタpの中身は変数cのアドレスなのでcのアドレスを表示
+    printf("*p: %c\n\n", *p);               //ポインタpが指し示す変数cの中身を参照するのでcの中身を表示
 
-    printf("s: %s\n", s);                    //sの中身を表示
-    printf("s[0]: %c\n", s[0]);              //sの0番目を表示
-    printf("s[1]: %c\n", s[1]);              //sの1番目を表示
-    printf("s: %p\n", s);
-    printf("&s[0]: %p\n", &s[0]);
-    printf("*s: %c\n", *s);
-    printf("*(s+1): %c\n\n", *(s+1));
+    printf("s: %s\n", s);                   //sの中身を表示
+    printf("s[0]: %c\n", s[0]);             //sの0番目を表示
+    printf("s[1]: %c\n", s[1]);             //sの1番目を表示
+    printf("s: %p\n", s);                   //sの先頭のアドレスを表示（s[0]のアドレス）
+    printf("&s[0]: %p\n", &s[0]);           //s[0]のアドレスを表示
+    printf("*s: %c\n", *s);                 //sの先頭の文字を指す
+    printf("*(s+1): %c\n\n", *(s+1));       //sの1番目を表示
 
-    *(s+2) = 'T';
-    printf("s: %s\n", s);
+    *(s+2) = 'T';                           //sの2番目をTに変更
+    printf("s: %s\n", s);                   //sの中身を表示（s[2]はT）
 
     return 0;
 }
