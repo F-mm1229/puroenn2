@@ -28,5 +28,7 @@ int main()
     printf("%c\n",top->next->key);
     printf("%c\n",top->next->next->key);
 
+    free(top);
+
     return 0;
 }

@@ -20,7 +20,7 @@ word_pair_t create_word_pair(char *a, char *b) {
         strcpy(w.longer_word, b);
         strcpy(w.shorter_word, a);
         if (strcmp(a, b) == 0) {   
-            printf("error\n");
+            puts("error");
             strcpy(w.shorter_word, "");
         }
     }

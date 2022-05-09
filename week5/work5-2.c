@@ -31,6 +31,7 @@ int main()
 
     printf("%cn", top->key);
     printf("%cn", top->next->key);
+
     
 
     return 0;
