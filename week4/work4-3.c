@@ -30,9 +30,6 @@ word_pair_t create_word_pair(char *a, char *b) {
     sprintf(w.combined_word, "%s %s", w.longer_word, w.shorter_word);
     printf("連結された文字列：%s\n\n", w.combined_word);
 
-    // printf("longer_word : %s\nshorter_word : %s\ncombined_word : %s\nlonger_word_length: % d\nshorter_word_length: % d\n", 
-    // w.longer_word, w.shorter_word, w.combined_word, w.longer_word_length, w.shorter_word_length);
-
     return w;
 }
 
