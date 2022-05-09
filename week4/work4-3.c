@@ -30,21 +30,27 @@ word_pair_t create_word_pair(char *a, char *b) {
     sprintf(w.combined_word, "%s %s", w.longer_word, w.shorter_word);
     printf("連結された文字列：%s\n\n", w.combined_word);
 
-    printf("longer_word : %s\nshorter_word : %s\ncombined_word : %s\nlonger_word_length: % d\nshorter_word_length: % d\n", 
-    w.longer_word, w.shorter_word, w.combined_word, w.longer_word_length, w.shorter_word_length);
+    // printf("longer_word : %s\nshorter_word : %s\ncombined_word : %s\nlonger_word_length: % d\nshorter_word_length: % d\n", 
+    // w.longer_word, w.shorter_word, w.combined_word, w.longer_word_length, w.shorter_word_length);
+
+    return w;
 }
 
 int main()
 {
     struct word_pair *word_pairs[100];
     char word_a[10], word_b[10];
+    word_pair_t word;
 
     printf("1つめの文字列を入力して下さい：");
     scanf("%s", word_a);
     printf("2つめの文字列を入力して下さい：");
     scanf("%s", word_b);
 
-    create_word_pair(word_a, word_b);
+    word = create_word_pair(word_a, word_b);
+
+    printf("longer_word : %s\nshorter_word : %s\ncombined_word : %s\nlonger_word_length: % d\nshorter_word_length: % d\n", 
+    word.longer_word, word.shorter_word, word.combined_word, word.longer_word_length, word.shorter_word_length);
 
     return 0;
 }
