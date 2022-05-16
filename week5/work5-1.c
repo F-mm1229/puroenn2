@@ -14,15 +14,15 @@ int main()
 
     top = (struct data *)malloc(sizeof(struct data));
     top->key = 'a';
-    top -> next = NULL;
+    top->next = NULL;
 
-    top -> next = (struct data *)malloc(sizeof(struct data));
-    top -> next -> key = 'b';
-    top -> next -> next = NULL;
+    top->next = (struct data *)malloc(sizeof(struct data));
+    top->next->key = 'b';
+    top->next->next = NULL;
 
-    top -> next -> next = (struct data *)malloc(sizeof(struct data));
-    top -> next -> next -> key = 'c';
-    top -> next -> next -> next = NULL;
+    top->next->next = (struct data *)malloc(sizeof(struct data));
+    top->next->next->key = 'c';
+    top->next->next->next = NULL;
 
     printf("%c\n",top->key);
     printf("%c\n",top->next->key);

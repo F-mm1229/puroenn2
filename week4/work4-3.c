@@ -19,14 +19,14 @@ word_pair_t create_word_pair(char *a, char *b) {
     } else if (strlen(a) <= strlen(b)) {
         strcpy(w.longer_word, b);
         strcpy(w.shorter_word, a);
-        if (strcmp(a, b) == 0) {   
+        if (strcmp(a, b) == 0) {
             puts("error");
             strcpy(w.shorter_word, "");
         }
     }
     w.longer_word_length = strlen(w.longer_word);
     w.shorter_word_length = strlen(w.shorter_word);
-    
+
     sprintf(w.combined_word, "%s %s", w.longer_word, w.shorter_word);
     printf("連結された文字列：%s\n\n", w.combined_word);
 

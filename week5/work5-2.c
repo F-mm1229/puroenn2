@@ -15,22 +15,28 @@ void print_stack_list(struct data *top) {
 int main()
 {
     struct data *top = NULL;
-    
 
     top = (struct data *)malloc(sizeof(struct data));
     top->key = 'a';
     top->next = NULL;
 
-    top->next = (struct data *)malloc(sizeof(struct data));
-    top->next->key = 'b';
+    top = (struct data *)malloc(sizeof(struct data));
+    top->key = 'b';
+    top->next = NULL;
+    top->next->key = 'c';
     top->next->next = NULL;
 
-    top->next->next = (struct data *)malloc(sizeof(struct data));
-    top->next->next->key = 'c';
+    top = (struct data *)malloc(sizeof(struct data));
+    top->key = 'c';
+    top->next = NULL;
+    top->next->key = 'b';
+    top->next->next = NULL;
+    top->next->next->key = 'a';
     top->next->next->next = NULL;
 
-    printf("%cn", top->key);
-    printf("%cn", top->next->key);
+    printf("%c\n", top->key);
+    printf("%c\n", top->next->key);
+    printf("%c\n", top->next->next->key);
 
     
 
