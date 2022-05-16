@@ -14,7 +14,21 @@ struct data {
 };
 
 void print_queue_list(struct queue q) {
-    
+    struct data *now = q.top;
+    int i = 0;
+    while (1){
+        i += 1;
+        if (now->next == NULL){
+            break;
+        }
+        printf("%c", now->key);
+        if(i == 1) {
+            printf("<---TOP");
+        }
+        putchar('\n');
+        now = now->next;
+    }
+    printf("%c<---REAR\n", q.rear->key);
 }
 
 int main()
@@ -41,10 +55,7 @@ int main()
     q.rear->key = 'd';
     q.rear->next = NULL;
 
-    printf("%c\n", q.top->key);
-    printf("%c\n", q.top->next->key);
-    printf("%c\n", q.top->next->next->key);
-    printf("%c\n", q.rear->key);
+    print_queue_list(q);
 
     free(q.top);
     free(q.rear);
