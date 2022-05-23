@@ -11,6 +11,7 @@ void print_stack_ary(char *s, int top) {
     for (int i = top - 1; i >= 0; i--) {
         printf("%c\n", s[i]);
     }
+    putchar('\n');
 }
 
 /* PUSHする関数 */
@@ -25,7 +26,9 @@ int main(void)
     int top = 0;
     
     push('x', s, &top);
+    print_stack_ary(s, top);
     push('y', s, &top);
+    print_stack_ary(s, top);
     push('z', s, &top);
     print_stack_ary(s, top);
 

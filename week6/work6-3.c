@@ -11,6 +11,7 @@ void print_stack_ary(char *s, int top) {
     for (int i = top - 1; i >= 0; i--) {
         printf("%c\n", s[i]);
     }
+    putchar('\n');
 }
 
 /* PUSHする関数 */
@@ -21,9 +22,11 @@ void push(char c, char *s, int *top) {
 
 /* POPする関数 */
 char pop(char *s, int *top) {
-    s[*top] = '\0';
+    char pop_word = s[*top - 1];
+    s[*top - 1] = '\0';
     *top -= 1;
-    return *s;
+    printf("%cを取り除きました\n\n", pop_word);
+    return pop_word;
 }
 
 int main(void)
@@ -34,8 +37,10 @@ int main(void)
     push('x', s, &top);
     push('y', s, &top);
     push('z', s, &top);
+    print_stack_ary(s, top);
     pop(s, &top);
     print_stack_ary(s, top);
+    
 
     return 0;
 }

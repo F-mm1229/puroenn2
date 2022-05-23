@@ -22,9 +22,11 @@ void push(char c, char *s, int *top) {
 
 /* POPする関数 */
 char pop(char *s, int *top) {
-    s[*top] = '\0';
+    char pop_word = s[*top - 1];
+    s[*top - 1] = '\0';
     *top -= 1;
-    return *s;
+    printf("%c\n", pop_word);
+    return pop_word;
 }
 
 int main(void)

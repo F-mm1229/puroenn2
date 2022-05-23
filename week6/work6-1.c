@@ -16,7 +16,15 @@ void print_stack_ary(char *s, int top) {
 int main(void)
 {
     char s[MAX] = {'a', 'b', 'c', 'd'};
-    int top = 4;
+    int top = 0;
+
+    while(1) {  
+        if (s[top] != '\0') {
+            top += 1;
+        } else {
+            break;
+        }
+    }
 
     print_stack_ary(s, top);
 
