@@ -1,4 +1,4 @@
-//必須課題 7-1
+//必須課題 7-2
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,23 +15,24 @@ void print_queue_ary(char *q, int top, int rear) {
             putchar('\n');
         }
     }
-    printf("<---REAR=%d\n", rear);
+    printf("<---REAR=%d\n\n", rear);
+}
+
+/* enqueueする関数 */
+void enqueue(char c, char *q, int *top, int *rear) {
+    q[*rear] = c;
+    *rear += 1;
 }
 
 int main(void)
 {
-    char q[MAX] = {'\0', '\0', '\0', 'a', 'b', 'c', 'd'};
-    int top = 3;
-    int rear = top;
+    char q[MAX] = {'0'};
+    int top = 0;
+    int rear = 0;
 
-    while(1) { 
-        if (q[rear] != '\0') {
-            rear += 1;
-        } else {
-            break;
-        }
-    }
-
+    enqueue('x', q, &top, &rear);
+    print_queue_ary(q, top, rear);
+    enqueue('y', q, &top, &rear);
     print_queue_ary(q, top, rear);
 
     return 0;

@@ -40,7 +40,6 @@ int main(void)
     print_stack_ary(s, top);
     pop(s, &top);
     print_stack_ary(s, top);
-    
 
     return 0;
 }
