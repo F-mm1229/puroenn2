@@ -37,16 +37,14 @@ void push(struct data **top, char key) {
 /* POPする関数 */
 char pop(struct data **top) {
     struct data *backup;
-    char key = top;
-    if (*top == NULL) {
+    backup = *top;
+    if (backup == NULL) {
         return '\0';
     }
-    key = '\0';
-    backup = *top;
+    free(backup);
     *top = backup->next;
-    free(*top);
-    printf("%pを取り除きました\n\n", *top);
-    return key;
+    printf("%cを取り除きました\n\n", backup->key);
+    return backup->key;
 }
 
 int main() {
@@ -60,6 +58,8 @@ int main() {
     print_struct_list(top);
     pop(&top);
     print_struct_list(top);
+
+    free(top);
 
     return 0;
 }
