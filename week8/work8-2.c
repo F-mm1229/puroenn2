@@ -1,4 +1,4 @@
-//必須課題 8-1
+//必須課題 8-2
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,9 +41,9 @@ char pop(struct data **top) {
     if (backup == NULL) {
         return '\0';
     }
-    free(backup);
     *top = backup->next;
     printf("%cを取り除きました\n\n", backup->key);
+    free(backup);
     return backup->key;
 }
 

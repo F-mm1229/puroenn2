@@ -47,14 +47,13 @@ char dequeue(struct queue *q) {
     if (q->top->next == NULL) {
         return '\0';
     }
-    free(q->top->next);
     q->top->next = q->top->next->next;
     printf("%cを取り除きました\n\n", backup);
+    free(q->top->next);
     return backup;
 }
 
-int main()
-{
+int main() {
     struct queue q;
     q.top = (struct data *)malloc(sizeof(struct data));
     q.rear = q.top;

@@ -1,7 +1,7 @@
 //必須課題 5-4
 
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 struct queue {
     struct data *top;
@@ -44,6 +44,8 @@ int main()
     q.rear = q.rear->next;
     q.rear->key = 'b';
     q.rear->next = NULL;
+
+    print_queue_list(q);
 
     q.rear->next = (struct data *)malloc(sizeof(struct data));
     q.rear = q.rear->next;
