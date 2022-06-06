@@ -28,8 +28,8 @@ void select_sort(int array[], int array_size) {
 int main()
 {
     FILE *fp;
-    int numbers[10];
     int count = 0;
+    int numbers[10];
 
     if((fp = fopen("numbers.dat", "r")) == NULL)
         printf("error");
