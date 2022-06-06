@@ -1,4 +1,4 @@
-// 必須課題 9-2
+// オプション課題 9-3
 
 #include <stdio.h>
 
@@ -10,14 +10,14 @@ void swap(int *x, int *y) {
     *y = temp;
 }
 
-/* 挿入ソート */
-void insert_sort (int array[], int array_size) {
+/* バブルソート */
+void bubble_sort (int array[], int array_size) {
     int i, j;
-    for (i = 1; i < array_size; i++) {
-        j = i;
-        while ((j > 0) && (array[j-1] > array[j])) {
-        swap(&array[j-1], &array[j]);
-        j--;
+    for (i = 0; i < array_size - 1; i++){
+        for (j = array_size - 1; j >= i + 1; j--){
+            if (array[j] < array[j-1]) {
+                swap(&array[j], &array[j-1]);
+            }
         }
     }
 }
@@ -41,15 +41,15 @@ int main()
     }
 
     printf("要素数：%d\n", count);
-    printf("挿入法でソート前：");
+    printf("バブルソートでソート前：");
     for (int i = 0; i < count; i++) {
         printf("%d ", numbers[i]);
     }
     putchar('\n');
 
-    insert_sort(numbers, count);
+    bubble_sort(numbers, count);
 
-    printf("挿入法でソート後：");
+    printf("バブルソートでソート後：");
     for (int i = 0; i < count; i++) {
         printf("%d ", numbers[i]);
     }
