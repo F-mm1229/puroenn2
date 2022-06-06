@@ -1,4 +1,4 @@
-// 必須課題 9-1
+// 必須課題9-2
 
 #include <stdio.h>
 
@@ -10,19 +10,16 @@ void swap(int *x, int *y) {
     *y = temp;
 }
 
-/* 選択ソート */
-void select_sort(int array[], int array_size) {
-    int i, j, min_index;
-    for (i = 0; i < array_size-1; i++) {
-        min_index = i;
-        for (j = i + 1; j < array_size; j++) {
-            if (array[j] < array[min_index]) {
-                min_index = j;
-            }
+/* 挿入ソート */
+void insert_sort (int array[], int array_size) {
+    int i, j;
+    for (i = 1; i < array_size; i++) {
+        j = i;
+        while ((j > 0) && (array[j-1] > array[j])) {
+        swap(&array[j-1], &array[j]);
+        j--;
         }
-    swap(&array[min_index], &array[i]);
     }
-
 }
 
 int main()
@@ -44,15 +41,15 @@ int main()
     }
 
     printf("要素数：%d\n", count);
-    printf("選択法でソート前：");
+    printf("挿入法でソート前：");
     for (int i = 0; i < count; i++) {
         printf("%d ", numbers[i]);
     }
     putchar('\n');
 
-    select_sort(numbers, count);
+    insert_sort(numbers, count);
 
-    printf("選択法でソート後：");
+    printf("挿入法でソート後：");
     for (int i = 0; i < count; i++) {
         printf("%d ", numbers[i]);
     }
