@@ -16,9 +16,13 @@ void insert_sort (int array[], int array_size) {
     for (i = 1; i < array_size; i++) {
         j = i;
         while ((j > 0) && (array[j-1] > array[j])) {
-        swap(&array[j-1], &array[j]);
-        j--;
+            swap(&array[j-1], &array[j]);
+            j--;
         }
+        for (int i = 0; i < array_size; i++) {
+            printf("%d ", array[i]);
+        }
+        putchar('\n');
     }
 }
 

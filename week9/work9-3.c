@@ -14,11 +14,15 @@ void swap(int *x, int *y) {
 void bubble_sort (int array[], int array_size) {
     int i, j;
     for (i = 0; i < array_size - 1; i++){
-        for (j = array_size - 1; j >= i + 1; j--){
+        for (j = 1; j < array_size - i; j++){
             if (array[j] < array[j-1]) {
                 swap(&array[j], &array[j-1]);
             }
         }
+        for (int i = 0; i < array_size; i++) {
+            printf("%d ", array[i]);
+        }
+        putchar('\n');
     }
 }
 

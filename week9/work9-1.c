@@ -20,9 +20,13 @@ void select_sort(int array[], int array_size) {
                 min_index = j;
             }
         }
-    swap(&array[min_index], &array[i]);
+        swap(&array[min_index], &array[i]);
+        
+        for (int i = 0; i < array_size; i++) {
+            printf("%d ", array[i]);
+        }
+        putchar('\n');
     }
-
 }
 
 int main()
