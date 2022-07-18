@@ -1,7 +1,7 @@
 // 必須課題13-1
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include </Users/yanofuki/puroenn2/week12/print_tree.c>
 
 /* 全てのnodeのメモリを開放する関数 */
@@ -30,24 +30,19 @@ int insert(int key, struct node *root){
     struct node *p;
     p = root;
 
-    while(1) {
-        if (p->key == 0) {
-            p->key = key;
-            p->left = new_node(0);
-            p->right = new_node(0);
-            break;
-        } else if (key == p->key) {
-            printf("その値はすでに存在します。\n");
-            return 0;
-        } else if (key < p->key) {
-            insert(key, p->left);
-            break;
-        } else if (key > p->key) {
-            insert(key, p->right);
-            break;
-        } else {
-            return 0;
-        }
+    if (p->key == 0) {
+        p->key = key;
+        p->left = new_node(0);
+        p->right = new_node(0);
+    } else if (key == p->key) {
+        printf("その値はすでに存在します。\n");
+        return 0;
+    } else if (key < p->key) {
+        insert(key, p->left);
+    } else if (key > p->key) {
+        insert(key, p->right);
+    } else {
+        return 0;
     }
 
     return 1;
@@ -65,7 +60,6 @@ int main(void){
             if (insert(key, root) == 1){
                 print_tree(root);
             } else {
-                // printf("その値はすでに存在します。\n");
                 print_tree(root);
             }
         } else {

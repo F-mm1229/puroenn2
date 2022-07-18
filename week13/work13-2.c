@@ -17,26 +17,28 @@ struct node *new_node(int key) {
 }
 
 /* 整数値を探索するプログラム */
-struct node *member_recursive(int key, struct node *root) {
+int member_recursive(int key, struct node *root) {
     struct node *p;
     p = root;
 
-    //下まで行ったのにrootに戻るのがわからない
-
     if (p->key > key) {
         if (p->key == 0) {
-            return NULL;
+            printf("キー%dが見つかりませんでした\n", key);
+            return 0;
         }
         member_recursive(key, p->left);
     } else if (p->key < key) {
         if (p->key == 0) {
-            return NULL;
+            printf("キー%dが見つかりませんでした\n", key);
+            return 0;
         }
         member_recursive(key, p->right);
     } else if (p->key == key) {
-        return p;
+        printf("キー%dが見つかりました\n", key);
+        return 0;
     }
 
+    return 0;
 }
 
 int main()
@@ -96,17 +98,10 @@ int main()
     n[9]->right = new_node(0);
     n[9]->parent = n[7];
 
-    // print_tree(root);
-
     int key;
     printf("探索するキーを入力してください：");
     scanf("%d", &key);
-    
-    if (member_recursive(key, root) == NULL) {
-        printf("キー%dはありません\n", key);
-    } else {
-        printf("キー%dが見つかりました\n", key);
-    }
+    member_recursive(key, root);
 
     free(root);
 
