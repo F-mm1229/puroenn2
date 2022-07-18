@@ -17,7 +17,7 @@ void insert(int val, int a[], int *n) {
     int num = *n;
     a[num] = val;
     while(1) {
-        if(num > 1 && a[num] >= a[num / 2]) {
+        if (num > 1 && a[num] >= a[num / 2]) {
             break;
         }
         swap(&a[num], &a[num / 2]);

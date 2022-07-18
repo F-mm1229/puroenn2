@@ -25,12 +25,13 @@ struct node *new_node(int key) {
     return p;
 }
 
+/* 要素を挿入する関数 */
 int insert(int key, struct node *root){
     struct node *p;
     p = root;
 
     while(1) {
-        if(p->key == 0) {
+        if (p->key == 0) {
             p->key = key;
             p->left = new_node(0);
             p->right = new_node(0);
@@ -62,7 +63,7 @@ int main(void){
         scanf("%d", &key);
 
         if (key > 0) {
-            if (insert(key,root) == 1){
+            if (insert(key, root) == 1){
                 print_tree(root);
             } else {
                 // printf("その値はすでに存在します。\n");
